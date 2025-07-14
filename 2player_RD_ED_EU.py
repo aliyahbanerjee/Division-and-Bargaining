@@ -6,8 +6,14 @@
 
 # import necessary tools from sympy library: symbols to allow for symbolic expressions in input, lambdify to turn expressions to functions readable by Python,
 # diff for second derivative in affinity checks later, and simplify for simplifying algebraic expressions. parse_expr for converting string input to symbolic expression.
+# for ModuleNotFoundError, prompt user to install SymPy. 
 
-from sympy import symbols, lambdify, diff, simplify
+try:
+    from sympy import symbols, lambdify, diff, simplify
+except ModuleNotFoundError:
+    print("SymPy is not installed. Please run:\n  pip install -r requirements.txt")
+    sys.exit(1)
+
 from sympy.parsing.sympy_parser import parse_expr
 
 # take inputs for utility functions for players 1 and 2, in the form of expressions using standard Python operators. Only allow for functions well-defined at 0, since random
