@@ -16,7 +16,8 @@ except ModuleNotFoundError:
 
 from sympy.parsing.sympy_parser import parse_expr
 
-# take inputs for utility functions for players 1 and 2, in the form of expressions using standard Python operators. Only allow for functions well-defined at 0, since random
+# take inputs for utility functions for players 1 and 2, in the form of expressions using standard Python operators (e.g.: enter 2x+3 as (2*x)+3)
+#Only allow for functions well-defined at 0, since random
 # dictatorship is subject to constraint that player other than dictator gets 0. 
 uf_player1 = input("Enter utility function of player 1 as a function of x, their allocation. Function must be well-defined at 0: ")
 uf_player2 = input("Enter utility function of player 2 as a function of x, their allocation. Function must be well-defined at 0: ")
